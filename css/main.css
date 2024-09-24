@@ -14,7 +14,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Red Hat Display", sans-serif;
-  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 .logo {
@@ -26,7 +26,7 @@
 
 .hero-content {
   display: grid;
-  justify-content: center;
+  justify-items: center;
   align-content: center;
   text-align: center;
   grid-template-columns: 1fr 1fr;
@@ -57,15 +57,18 @@
   gap: 2rem;
 }
 
-.content-title {
+.content__title {
+  max-width: 25rem;
   font-size: 2.6rem;
   font-weight: 900;
   color: var(--slate-900);
 }
 
-.content-text {
+.content__text {
   font-size: 1.1rem;
-  min-width: 80%;
+  padding: 0 1.8rem 0 1.8rem;
+  max-width: 31rem;
+  overflow-wrap: break-word;
   color: var(--slate-600);
 }
 
@@ -146,22 +149,140 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 1rem;
+  padding: 0 1rem 0 1rem;
 }
 
-.gallery__first img {
+.info-gallery > img {
   width: 100%;
+  border-radius: 1rem;
 }
 
-.gallery__second img{
-  width: 100%;
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 1rem;
 }
 
-.gallery__three img{
-  width: 100%;
-  
+.container__subtitle {
+  color: var(--cyan-600);
+  letter-spacing: .2rem;
+  font-size: .9rem;
+  text-transform: uppercase;
 }
 
-.gallery__four img{
-  width: 100%;
-  
+.container__title {
+  font-size: 2rem;
+  color: var(--slate-900);
+  font-weight: 900;
+  padding: 0 2rem 0 2rem;
+}
+
+.container__text {
+  font-size: 1.1rem;
+  text-wrap: balance;
+  padding: .6rem 1rem 0 1rem;
+  min-width: 80%;
+  color: var(--slate-600);
+  padding-bottom: 2rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+  position: relative;
+}
+
+.footer-description {
+  background-image: linear-gradient(
+    rgba(77, 150, 168, 0.8),
+    rgba(77, 150, 168, 0.8)
+    ), url(../starter-code/assets/mobile/image-footer.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem;
+  gap: 2rem;
+  color: var(--white);
+}
+
+.description__title {
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+}
+.description__text {
+  font-weight: 600;
+}
+
+.featured {
+  background-color: var(--purple-600);
+  font-weight: 900;
+}
+
+.featured span {
+  color: var(--purple-300);
+}
+
+.foot {
+  position: absolute;
+  top: 3.5rem;
+  background: var(--white);
+}
+
+@media (min-width: 768px) {
+  .content__title {
+    padding-top: 1rem;
+    text-wrap: balance;
+    max-width: 20rem;
+  }
+
+  .content__text {
+    max-width: 30rem;
+    overflow-wrap: break-word;
+  }
+
+  .content-cta {
+    flex-direction: row;
+  }
+
+  .info-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container__text {
+    max-width: 7rem;
+  }
+
+  .content-bg__left,
+  .content-bg__right {
+    min-width: 100%;
+  }
+
+  .footer-description {
+    background-image: linear-gradient(
+    rgba(77, 150, 168, 0.8),
+    rgba(77, 150, 168, 0.8)
+    ), url(../starter-code/assets/tablet/image-footer.jpg);
+    min-width: 100%;
+  }
+
+  .description__text {
+    max-width: 30rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "box1 box3 box2";
+    padding-bottom: 4rem;
+  }
 }
