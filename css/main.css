@@ -296,19 +296,19 @@ footer {
 
   .info-container {
     padding-top: 2rem;
-    padding-bottom: 7rem;
+    padding-bottom: 6rem;
   }
 
   .container__text {
     min-width: 50%;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding-top: 1rem;
   }
 
   .container__title {
     max-width: 30rem;
-    font-size: 2.5rem;
-    
+    font-size: 3.1rem;
+  }
 
   .info-gallery {
     padding: 0 6rem 0 6rem;
